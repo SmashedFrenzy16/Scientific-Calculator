@@ -22,10 +22,10 @@ class SciCalc:
         b_list = [
             [ 'sin', 'cos', 'tan', '^2', '^3'],
             ['log(x)', '1/x', 'x!', 'sqrt', 'cbrt'],
-            ['7', '8', '9', 'C'],
+            ['7', '8', '9', 'C', 'pi'],
             ['4', '5', '6', '*', '/'],
             ['1', '2', '3', '+', '-'],
-            ['0', '.', '10^x', '=']
+            ['0', '.', '10^x', 'e', '=']
         ]
 
         for i, row in enumerate(b_list):
@@ -187,6 +187,30 @@ class SciCalc:
             try:
 
                 result = 10 ** float(self.entry.get())
+
+                self.total.set(result)
+
+            except:
+
+                self.total.set("Error!")
+                
+        elif b_text == 'pi':
+
+            try:
+
+                result = pi
+
+                self.total.set(result)
+
+            except:
+
+                self.total.set("Error!")
+                
+        elif b_text == 'e':
+
+            try:
+
+                result = e
 
                 self.total.set(result)
 
